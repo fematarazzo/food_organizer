@@ -10,7 +10,7 @@ use Mix.Config
 config :food_organizer,
   ecto_repos: [FoodOrganizer.Repo]
 
-config :food_organizer,
+config :food_organizer, FoodOrganizer.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
 
