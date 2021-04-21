@@ -14,6 +14,8 @@ config :food_organizer, FoodOrganizer.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
 
+config :food_organizer, FoodOrganizer.Mailer, adapter: Bamboo.LocalAdapter
+
 # Configures the endpoint
 config :food_organizer, FoodOrganizerWeb.Endpoint,
   url: [host: "localhost"],
