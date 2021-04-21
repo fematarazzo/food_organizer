@@ -11,7 +11,7 @@ defmodule FoodOrganizerWeb.Router do
     get "/", WelcomeController, :index
 
     post "/restaurants", RestaurantsController, :create
-    post "/supplies", SuppliesController, :create
+    resources "/supplies", SuppliesController, only: [:create, :show]
   end
 
   # Enables LiveDashboard only for development

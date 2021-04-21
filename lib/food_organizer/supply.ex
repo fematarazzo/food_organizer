@@ -5,6 +5,7 @@ defmodule FoodOrganizer.Supply do
   alias FoodOrganizer.Restaurant
 
   @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
   @required_params [:description, :expiration_date, :responsible, :restaurant_id]
 
@@ -15,7 +16,7 @@ defmodule FoodOrganizer.Supply do
     field :expiration_date, :date
     field :responsible, :string
 
-    belong_to :restaurant, Restaurant
+    belongs_to :restaurant, Restaurant
 
     timestamps()
   end
