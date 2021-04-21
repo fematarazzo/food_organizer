@@ -1,19 +1,9 @@
 # FoodOrganizer
 
-To start your Phoenix server:
+An API to control food expiring from restaurants.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+## Use
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+You can add new restaurants and its supplies via POST request to the API.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+It's possible to send e-mails with the food that will expire in the current week to the restaurant's e-mail.
