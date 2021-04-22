@@ -14,9 +14,10 @@ defmodule FoodOrganizer.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: FoodOrganizer.PubSub},
       # Start the Endpoint (http/https)
-      FoodOrganizerWeb.Endpoint
+      FoodOrganizerWeb.Endpoint,
       # Start a worker by calling: FoodOrganizer.Worker.start_link(arg)
       # {FoodOrganizer.Worker, arg}
+      FoodOrganizer.Supplies.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
