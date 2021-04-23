@@ -1,30 +1,30 @@
 defmodule FoodOrganizer.Restaurant do
-use Ecto.Schema
-import Ecto.Changeset
+  use Ecto.Schema
+  import Ecto.Changeset
 
-alias FoodOrganizer.Supply
+  alias FoodOrganizer.Supply
 
-@primary_key {:id, :binary_id, autogenerate: true}
+  @primary_key {:id, :binary_id, autogenerate: true}
 
-@required_params [:email, :name]
+  @required_params [:email, :name]
 
-@derive {Jason.Encoder, only: @required_params ++ [:id]}
+  @derive {Jason.Encoder, only: @required_params ++ [:id]}
 
-schema "restaurants" do
-  field :email, :string
-  field :name, :string
+  schema "restaurants" do
+    field :email, :string
+    field :name, :string
 
-  has_many :supplies, Supply
+    has_many :supplies, Supply
 
-  timestamps()
-end
+    timestamps()
+  end
 
-def changeset(params) do
-  %__MODULE__{}
-  |> cast(params, @required_params)
-  |> validate_required(@required_params)
-  |> validate_length(:name, min: 2)
-  |> validate_format(:email, ~r/@/)
-  |> unique_constraint([:email])
-end
+  def changeset(params) do
+    %__MODULE__{}
+    |> cast(params, @required_params)
+    |> validate_required(@required_params)
+    |> validate_length(:name, min: 2)
+    |> validate_format(:email, ~r/@/)
+    |> unique_constraint([:email])
+  end
 end
