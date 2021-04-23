@@ -25,6 +25,7 @@ defmodule FoodOrganizer.RestaurantsControllerTest do
 
       expected_response = %{"message" => %{"name" => ["can't be blank"]}}
 
+
       response =
         conn
         |> post(Routes.restaurants_path(conn, :create, params))
